@@ -6,17 +6,14 @@ const Sequelize = require('sequelize');
 //   storage: './db/app.db'
 // });
 
-// POSTGRESQL
-//const sequelize = new Sequelize('postgres://postgres@localhost:5432/jobsfinder', {dialect: 'postgres'}) // Example for postgres
+// POSTGRESQL LOCAL
+// const sequelize = new Sequelize('postgres://postgres@localhost:5432/jobsfinder', {dialect: 'postgres'}) // Example for postgres
 
 /* HEROKU
 postgres://qtfzszxdvkcxrh:d4af303e2005512cd239e2cfeb7ebbb5afb4a870a5077802b3e272986398688c@ec2-52-86-56-90.compute-1.amazonaws.com:5432/d730earqbnv78
 */
 
-// DATABASE_URL='postgres://qtfzszxdvkcxrh:d4af303e2005512cd239e2cfeb7ebbb5afb4a870a5077802b3e272986398688c@ec2-52-86-56-90.compute-1.amazonaws.com:5432/d730earqbnv78'
-
-//const sequelize = new Sequelize(DATABASE_URL);
-
+// HEROKU PRODUCTION
 const sequelize = new Sequelize({
   database: process.env.DB_NAME,
   username: process.env.DB_USER,
